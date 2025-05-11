@@ -1,0 +1,168 @@
+/* General Styles */
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed to flex-start to align at the top */
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling for the entire section */
+  }
+  
+  .register-form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh; /* Limit the height to 90% of the viewport */
+    overflow-y: auto; /* Make the form container scrollable */
+  }
+  
+  .form-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff;
+  }
+  
+  .form-input:disabled {
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+  }
+  
+  /* Button Styles */
+  .btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-btn {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .form-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Availability Section */
+  .availability-section {
+    margin-top: 20px;
+  }
+  
+  .availability-section h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .availability-day {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fafafa;
+  }
+  
+  .availability-day h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .availability-day label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .availability-day input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  
+  .time-inputs {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .time-inputs input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .time-inputs input:focus {
+    border-color: #007bff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .register-form-container {
+      padding: 20px;
+    }
+  
+    .form-heading {
+      font-size: 20px;
+    }
+  
+    .form-input {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .btn {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .availability-day {
+      padding: 10px;
+    }
+  
+    .availability-day h3 {
+      font-size: 14px;
+    }
+  
+    .time-inputs input {
+      padding: 6px;
+      font-size: 12px;
+    }
+  }

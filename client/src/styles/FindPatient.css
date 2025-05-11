@@ -1,0 +1,113 @@
+.find-patient-container {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f5f7fa;
+  }
+  
+  .find-patient-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .find-patient-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .search-input-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-input-group input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .search-input-group button {
+    padding: 0 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .search-input-group button:hover {
+    background-color: #3a7bc8;
+  }
+  
+  .search-input-group button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .patient-details-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+  }
+  
+  .patient-details-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  .patient-info p {
+    margin: 0.5rem 0;
+    color: #34495e;
+  }
+  
+  .no-patient {
+    margin-top: 2rem;
+    text-align: center;
+    color: #7f8c8d;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  .user-table-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(165, 165, 165);
+  }
+  
+  @media (max-width: 768px) {
+    .find-patient-container {
+      padding: 1rem;
+    }
+    
+    .search-input-group {
+      flex-direction: column;
+    }
+    
+    .search-input-group button {
+      padding: 10px;
+    }
+  }

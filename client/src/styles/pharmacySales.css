@@ -1,0 +1,815 @@
+/* Table container - Updated */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Medicines table - Updated */
+  .medicines-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    min-width: 1000px; /* Minimum width to contain all columns */
+  }
+  
+  /* Rest of the page layout - Ensure no horizontal scroll */
+  .pharmacy-sales-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    overflow-x: hidden; /* Prevent horizontal scroll on entire page */
+  }
+  
+  .pharmacy-content {
+    flex: 1;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .pharmacy-main {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+    overflow: hidden; /* Prevent content from overflowing */
+  }
+  
+  
+  .pharmacy-title {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  /* Search and filter controls */
+  .search-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .search-input-group {
+    flex: 2;
+    min-width: 300px;
+    position: relative;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #1F51FF;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+  }
+  
+  .filter-group {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    min-width: 250px;
+  }
+  
+  .category-select {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .reset-btn {
+    padding: 12px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  
+  .reset-btn:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Pharmacy layout */
+  /* Main container - prevent horizontal scroll */
+.pharmacy-sales-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    overflow-x: hidden; /* Prevent horizontal scroll on entire page */
+  }
+  
+  /* Content area */
+  .pharmacy-content {
+    flex: 1;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  
+  /* Main layout - use flexbox */
+  .pharmacy-layout {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  /* Medicine list section - will contain scrollable table */
+  .medicine-list-section {
+    flex: 2;
+    min-width: 0; /* Important for flexbox overflow */
+  }
+  
+  /* Table container - handles horizontal scrolling */
+  .table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Table styling - fixed layout */
+  .medicines-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    table-layout: fixed; /* Ensures consistent column widths */
+  }
+  
+  /* Set minimum column widths */
+  .medicines-table th:nth-child(1),
+  .medicines-table td:nth-child(1) {
+    min-width: 180px; /* Name column */
+  }
+  
+  .medicines-table th:nth-child(2),
+  .medicines-table td:nth-child(2) {
+    min-width: 120px; /* Generic Name */
+  }
+  
+  .medicines-table th:nth-child(3),
+  .medicines-table td:nth-child(3) {
+    min-width: 100px; /* Formula */
+  }
+  
+  .medicines-table th:nth-child(4),
+  .medicines-table td:nth-child(4) {
+    min-width: 150px; /* Manufacturer */
+  }
+  
+  .medicines-table th:nth-child(5),
+  .medicines-table td:nth-child(5) {
+    min-width: 120px; /* Dosage */
+  }
+  
+  .medicines-table th:nth-child(6),
+  .medicines-table td:nth-child(6) {
+    min-width: 80px; /* Stock */
+  }
+  
+  .medicines-table th:nth-child(7),
+  .medicines-table td:nth-child(7) {
+    min-width: 80px; /* Price */
+  }
+  
+  .medicines-table th:nth-child(8),
+  .medicines-table td:nth-child(8) {
+    min-width: 200px; /* Pharmacy */
+  }
+  
+  .medicines-table th:nth-child(9),
+  .medicines-table td:nth-child(9) {
+    min-width: 120px; /* Action */
+  }
+  
+  /* Cart section - fixed width */
+  .cart-section {
+    flex: 1;
+    min-width: 350px; /* Fixed width for cart */
+    max-width: 350px; /* Prevent growing beyond this */
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
+  
+  /* Table header */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .table-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #2c3e50;
+  }
+  
+  .results-count {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  /* Cart card */
+  .cart-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+  }
+  
+  .cart-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #2c3e50;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Cart items */
+  .cart-items-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px;
+  }
+  
+  .cart-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .item-name {
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .item-price {
+    color: #1F51FF;
+    font-weight: 500;
+  }
+  
+  .item-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .quantity-adjuster {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  
+  .quantity-btn:hover {
+    background: #f5f5f5;
+  }
+  
+  .quantity-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .quantity-btn.plus {
+    background-color: #f0f7ff;
+    color: #1F51FF;
+  }
+  
+  .quantity-btn.minus {
+    background-color: #fff0f0;
+    color: #ff4444;
+  }
+  
+  .quantity {
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  .remove-item-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+  
+  .remove-item-btn:hover {
+    text-decoration: underline;
+  }
+  
+  /* Cart summary */
+  .cart-summary {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .discount-row {
+    align-items: center;
+  }
+  
+  .discount-input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .discount-input-group input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: right;
+  }
+  
+  .total-row {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .total-amount {
+    color: #1F51FF;
+    font-weight: 700;
+  }
+  
+  .checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #1F51FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #1742cc;
+  }
+  
+  /* Empty cart */
+  .empty-cart {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .empty-cart img {
+    width: 150px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+  }
+  
+  .empty-cart p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .empty-cart small {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .pharmacy-layout {
+      flex-direction: column;
+    }
+    
+    .cart-section {
+      min-width: auto;
+    }
+    
+    .search-controls {
+      flex-direction: column;
+    }
+    
+    .search-input-group,
+    .filter-group {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+
+  /* Table container */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+  }
+  
+  /* Medicines table */
+  .medicines-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  
+  .medicines-table th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .medicines-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  
+  .medicines-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .medicines-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Medicine name cell */
+  .medicine-name {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .generic-name {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 3px;
+  }
+  
+  .prescription-badge {
+    background-color: #ffebee;
+    color: #c62828;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  /* Stock badge */
+  .stock-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .stock-badge.in {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .stock-badge.low {
+    background-color: #fff8e1;
+    color: #ff8f00;
+  }
+  
+  .stock-badge.out {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+  
+  /* Add to cart button */
+  .add-to-cart-btn {
+    padding: 8px 15px;
+    background-color: #1F51FF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #1742cc;
+  }
+  
+  .add-to-cart-btn:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+  
+  .add-to-cart-btn.disabled {
+    background-color: #f5f5f5;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+  
+  /* Out of stock row */
+  .medicines-table tr.out-of-stock {
+    opacity: 0.7;
+    background-color: #fafafa;
+  }
+  
+  .medicines-table tr.out-of-stock:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* No results row */
+  .no-results td {
+    text-align: center;
+    padding: 30px;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+
+
+  /* Ensure table headers stay fixed during horizontal scroll */
+.medicines-table th {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 10;
+  }
+  
+  /* Add shadow to indicate scrollable area */
+  .table-container {
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,0.05);
+  }
+  
+  /* Style the scrollbar (optional) */
+  .table-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+
+  /* Checkout Form Styles */
+.checkout-form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f7fa;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .checkout-form {
+    width: 60%;
+    max-width: 600px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin: 20px 0;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Order Summary Styles */
+  .order-summary {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .order-items {
+    margin-bottom: 20px;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .order-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+    font-weight: bold;
+  }
+  
+  /* Form Action Buttons */
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .cancel-btn, .submit-btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .cancel-btn {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .cancel-btn:hover {
+    background: #e0e0e0;
+  }
+  
+  .submit-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .submit-btn:hover {
+    background: #45a049;
+  }
+  
+  /* Receipt Styles */
+  .receipt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .receipt {
+    width: 80%;
+    max-width: 700px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  .receipt-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .print-btn, .home-btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .print-btn {
+    background: #2c7be5;
+    color: white;
+    border: none;
+  }
+  
+  .print-btn:hover {
+    background: #1a68d1;
+  }
+  
+  .home-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+  }
+  
+  .home-btn:hover {
+    background: #5a6268;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .checkout-form,
+    .receipt {
+      width: 90%;
+      padding: 20px;
+    }
+    
+    .form-actions,
+    .receipt-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .cancel-btn,
+    .submit-btn,
+    .print-btn,
+    .home-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }

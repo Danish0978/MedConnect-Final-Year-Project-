@@ -1,0 +1,13 @@
+/* layout.css */
+.dashboard-default {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .dashboard-default h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  /* Add any other layout-specific styles here */

@@ -1,0 +1,62 @@
+@import url(app.css);
+
+.doctors {
+  margin-bottom: 3rem;
+}
+
+.doctors-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3rem;
+  width: 100%;
+}
+
+
+/* Search Bar Styles */
+.doctor-search-container {
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 2000px;
+}
+
+.doctor-search-bar {
+  position: relative;
+  min-width: 100%;
+}
+
+.doctor-search-bar input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.doctor-search-bar input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .doctor-search-container {
+    margin: 1rem 0;
+  }
+  
+  .doctor-search-bar input {
+    padding: 0.7rem 1rem 0.7rem 2.3rem;
+    font-size: 0.9rem;
+  }
+}
